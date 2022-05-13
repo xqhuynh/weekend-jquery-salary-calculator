@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.headerTitle {
+  background-color: grey;
+  padding: 5px;
+  text-align: center;
+  color: white;
+}
+
+/* .addEmployeeContainer {
+  margin-left: 15px;
+} */
+
+.employeeForm {
+  margin-left: 10px;
+}
+
+.submitButton {
+  margin-left: 10px;
+}
+
+.employeesInfoContainer {
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+.totalMonthly {
+  text-align: right;
+  margin-right: 25px;
+  width: 60%;
+}
+
+.headerTitleText {
+  border: 1px solid black;
+  padding: 5px 25px 5px 5px;
+  text-align: left;
+  background-color: rgb(182, 203, 220);
+}
