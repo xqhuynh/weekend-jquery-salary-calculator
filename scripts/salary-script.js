@@ -6,37 +6,50 @@ function readyNow() {
   $(".submitButton").on("click", textInputOnSubmit);
 }
 
+let totalMonthlyExpense = [];
+
 function textInputOnSubmit() {
-  // create variables for getting input values
-  let firstNameResult = $(".firstNameInput").val(); // first name input
-  let lastNameResult = $(".lastNameInput").val();
-  let idNumberResult = $(".idNumberInput").val();
-  let titleResult = $(".titleInput").val();
-  let salaryResult = $(".annualSalaryInput").val();
+  // Get user inputs and store in new object
+  let newEmployee = {
+    firstNameResult: $(".firstNameInput").val(),
+    lastNameResult: $(".lastNameInput").val(),
+    idNumberResult: $(".idNumberInput").val(),
+    titleResult: $(".titleInput").val(),
+    salaryResult: $(".annualSalaryInput").val(),
+  };
+  // Push object into empty array
+  totalMonthlyExpense.push(newEmployee);
+  // Empty inputs after user clicks submit
   $(".firstNameInput").val("");
   $(".lastNameInput").val("");
   $(".idNumberInput").val("");
   $(".titleInput").val("");
   $(".annualSalaryInput").val("");
-  // append text when submit button click
-  $(".employeesRows").append(
-    `
-      <tr>
-        <td>${firstNameResult}</td>  
-        <td>${lastNameResult}</td> 
-        <td>${idNumberResult}</td> 
-        <td>${titleResult}</td> 
-        <td>${salaryResult}</td> 
-      </tr>
-       
-      `
-  );
-  // calculate monthly expense
-  // this is the element that causes the calculations
-  let tr = $(this).parent().parent();
-  // 'this' parent until tr
-  // Set total expense to zero, take annual salary from input and divide by 12 months
-  let totalAnnualExpense = 0;
-  let monthyTotal = (totalAnnualExpense += salaryResult / 12);
-  $(".totalMonthly").text(`<h3>`+ `${monthyTotal}` + `</h3>`);
+  // Call calculateMonthlyExpense function
+  calculateMonthlyExpense();
 }
+
+function calculateMonthlyExpense() {
+  // loop through array
+  // for each annual salary, divide by 12 months
+  let sumSalary = 0;
+  for (let annualSalary of totalMonthlyExpense) {
+    sumSalary += annualSalary.salaryResult / 12;
+    console.log(annualSalary.salaryResult);
+  }
+  let monthlyOut = $(".totalMonthlyOut");
+  monthlyOut.empty();
+  monthlyOut.append(`$`, sumSalary);
+}
+
+// $(".employeesRows").append(
+//   `
+//     <tr>
+//       <td>${firstNameResult}</td>
+//       <td>${lastNameResult}</td>
+//       <td>${idNumberResult}</td>
+//       <td>${titleResult}</td>
+//       <td>${salaryResult}</td>
+//     </tr>
+//     `
+// );

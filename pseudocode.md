@@ -29,6 +29,6 @@
    [x] clear input text values after submit button clicked
 
 4. Total monthly
-   [] target annual salary input text fields
+   [x] target annual salary input text fields
    [] Sum up annual salary and divide by 12
    [] append text to total monthly
