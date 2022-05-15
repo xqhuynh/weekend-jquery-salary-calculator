@@ -6,8 +6,10 @@ function readyNow() {
   $(".submitButton").on("click", textInputOnSubmit);
 }
 
+// Create empty array to push in new object
 let totalMonthlyExpense = [];
 
+// Function to get input values
 function textInputOnSubmit() {
   // Get user inputs and store in new object
   let newEmployee = {
@@ -27,8 +29,10 @@ function textInputOnSubmit() {
   $(".annualSalaryInput").val("");
   // Call calculateMonthlyExpense function
   calculateMonthlyExpense();
+  displayEmployeeInfo();
 }
 
+// Function to calculate monthly expense
 function calculateMonthlyExpense() {
   // loop through array
   // for each annual salary, divide by 12 months
@@ -42,14 +46,18 @@ function calculateMonthlyExpense() {
   monthlyOut.append(`$`, sumSalary);
 }
 
-// $(".employeesRows").append(
-//   `
-//     <tr>
-//       <td>${firstNameResult}</td>
-//       <td>${lastNameResult}</td>
-//       <td>${idNumberResult}</td>
-//       <td>${titleResult}</td>
-//       <td>${salaryResult}</td>
-//     </tr>
-//     `
-// );
+// Function to display employee info
+function displayEmployeeInfo() {
+  // Target inputs
+  let employeeInfo = $(".employeesRows");
+  employeeInfo.empty();
+  for (let employees of totalMonthlyExpense) {
+    employeeInfo.append(`<tr>
+    <td>${employees.firstNameResult}</td>
+    <td>${employees.lastNameResult}</td>
+    <td>${employees.idNumberResult}</td>
+    <td>${employees.titleResult}</td>
+    <td>${employees.salaryResult}</td>
+    </tr>`);
+  }
+}
