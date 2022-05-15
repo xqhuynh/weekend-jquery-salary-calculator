@@ -43,7 +43,10 @@ function calculateMonthlyExpense() {
   }
   let monthlyOut = $(".totalMonthlyOut");
   monthlyOut.empty();
-  monthlyOut.append(`$`, sumSalary);
+  monthlyOut.append(`$ `, sumSalary.toFixed(2));
+  if (sumSalary > 20000) {
+    monthlyOut.css("background", "red");
+  }
 }
 
 // Function to display employee info
