@@ -20,6 +20,13 @@ h2 {
 
 .submitButton {
   margin-left: 10px;
+  background-color: rgb(63 111 198);
+  color: white;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  color: rgb(141 159 191);
 }
 
 .employeesInfoContainer {
