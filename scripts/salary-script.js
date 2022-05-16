@@ -64,3 +64,5 @@ function displayEmployeeInfo() {
     </tr>`);
   }
 }
+
+// DOM Traversal

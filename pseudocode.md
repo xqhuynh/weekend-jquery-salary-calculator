@@ -30,5 +30,5 @@
 
 4. Total monthly
    [x] target annual salary input text fields
-   [] Sum up annual salary and divide by 12
-   [] append text to total monthly
+   [x] Sum up annual salary and divide by 12
+   [x] append text to total monthly
