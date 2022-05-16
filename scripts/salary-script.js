@@ -6,6 +6,7 @@ function readyNow() {
   $(".submitButton").on("click", textInputOnSubmit);
   // Dynamic click listener
   // ${EXISTS NOW}.on('click', 'EXISTS LATER', handleClick)
+  // select class/id in index.html that already exists
   $(".employeesRows").on("click", ".deleteBtn", onDeleteBtn);
 }
 
@@ -71,6 +72,7 @@ function onDeleteBtn() {
   $(this).closest("tr").remove();
   //$(this).parent().parent().remove();
   // button  td      tr
+  // Note: row will be deleted but annual salary in array will still be present
 }
 
 // DOM Notes -----------------------------------------------------------------------------------------------------------------
