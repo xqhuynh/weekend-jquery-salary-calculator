@@ -22,11 +22,7 @@ function textInputOnSubmit() {
   // Push object into empty array
   totalMonthlyExpense.push(newEmployee);
   // Empty inputs after user clicks submit
-  $(".firstNameInput").val("");
-  $(".lastNameInput").val("");
-  $(".idNumberInput").val("");
-  $(".titleInput").val("");
-  $(".annualSalaryInput").val("");
+  $(".employeeForm").val("");
   // Call calculateMonthlyExpense function
   calculateMonthlyExpense();
   displayEmployeeInfo();

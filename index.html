@@ -14,7 +14,7 @@
       <h1>Salary Calculator</h1>
     </div>
     <!-- Add employee container -->
-    <div class="addEmployeeContainer">
+    <main>
       <h2>Add Employee</h2>
       <div class="forms-container">
         <input
@@ -44,33 +44,35 @@
         />
         <button class="submitButton">Submit</button>
       </div>
-    </div>
-    <div class="employeesInfoContainer">
-      <h3>Employees</h3>
-      <table>
-        <tbody>
-          <tr class="headerContainer">
-            <th class="headerTitleText">First Name</th>
-            <th class="headerTitleText">Last Name</th>
-            <th class="headerTitleText">ID</th>
-            <th class="headerTitleText">Title</th>
-            <th class="headerTitleText">Annual Salary</th>
-          </tr>
-        </tbody>
+      <!-- Table  -->
+      <div class="employeesInfoContainer">
+        <h3>Employees</h3>
+        <table>
+          <thead>
+            <tr class="headerContainer">
+              <th class="headerTitleText">First Name</th>
+              <th class="headerTitleText">Last Name</th>
+              <th class="headerTitleText">ID</th>
+              <th class="headerTitleText">Title</th>
+              <th class="headerTitleText">Annual Salary</th>
+            </tr>
+          </thead>
 
-        <tbody class="employeesRows">
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="totalMonthly">
-      <h3>Total Monthly: <span class="totalMonthlyOut"></span></h3>
-    </div>
+          <tbody class="employeesRows">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="deleteBtn"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="totalMonthly">
+        <h3>Total Monthly: <span class="totalMonthlyOut"></span></h3>
+      </div>
+    </main>
   </body>
 </html>
