@@ -2,8 +2,11 @@ $(readyNow);
 
 function readyNow() {
   console.log("hello");
-  // Target on click submit button
+  // Target click listeners
   $(".submitButton").on("click", textInputOnSubmit);
+  // Dynamic click listener
+  // ${EXISTS NOW}.on('click', 'EXISTS LATER', handleClick)
+  $(".employeesRows").on("click", ".deleteBtn", onDeleteBtn);
 }
 
 // Create empty array to push in new object
@@ -47,8 +50,9 @@ function calculateMonthlyExpense() {
 
 // Function to display employee info
 function displayEmployeeInfo() {
-  // Target inputs
+  // Target employees table output
   let employeeInfo = $(".employeesRows");
+  // Clear DOM
   employeeInfo.empty();
   for (let employees of totalMonthlyExpense) {
     employeeInfo.append(`<tr>
@@ -57,8 +61,18 @@ function displayEmployeeInfo() {
     <td>${employees.idNumberResult}</td>
     <td>${employees.titleResult}</td>
     <td>${employees.salaryResult}</td>
+    <td><button class="deleteBtn">Delete</button></td>
     </tr>`);
   }
 }
 
-// DOM Traversal
+function onDeleteBtn() {
+  // Remove row that's click on
+  $(this).parent().parent().remove();
+  // button  td      tr
+}
+
+// DOM Notes -----------------------------------------------------------------------------------------------------------------
+// .html is replace
+// .text changes text
+// .append adds to DOM
