@@ -67,8 +67,9 @@ function displayEmployeeInfo() {
 }
 
 function onDeleteBtn() {
-  // Remove row that's click on
-  $(this).parent().parent().remove();
+  // Remove row that's clicked on
+  $(this).closest("tr").remove();
+  //$(this).parent().parent().remove();
   // button  td      tr
 }
 
